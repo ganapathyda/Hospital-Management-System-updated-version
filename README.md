@@ -37,5 +37,5 @@ Hospital Management System using MySQL, Php.
   The XAMPP Control Panel allows you to manually start and stop Apache and MySQL. To start Apache or MySQL manually, click the ‘Start’ button under ‘Actions’.
   
   
-<p align="center"><img src="https://user-images.githubusercontent.com/36665975/59350977-fcc68900-8d3a-11e9-9450-e5c478497caa.png"></img></p>
-
+<p align="center"><img src="https://user-images.githubusercontent.com/36665975/59350977-fcc68900-8d3a-11e9-9450-e5c478497caa.png"></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/60843507/108595095-032c5580-73a4-11eb-93d0-051a1e90917f.PNG"></p>
