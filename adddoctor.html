@@ -1,0 +1,240 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>We Care</title>
+
+    <!-- Title icon -->
+    <link rel="icon" href="assets/images&gif/others/logo.jpg">
+
+    <!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@700&display=swap" rel="stylesheet">    
+    <!--Css Stylesheets-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/tables.css">
+    <!--FontAwesome-->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+    
+    <!--Bootstrap-->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<style>
+        body{
+            background-color: #009879;
+            margin:0;
+	        padding:0;
+	        font-family: sans-serif;
+        }
+        .signup-menu{
+            background-color:#009879;
+            height:100%;
+            width:100%;
+        }
+        .signup-formbox{
+            font-family: sans-serif;
+            height: 720px;
+            width: 430px;
+            position: relative;
+            margin: 6% auto;
+            background: #fff;
+            padding: 5px;
+            border-radius: 20px;
+            box-shadow: 0 0 20px 9px #ff61241f;
+        }
+
+        #signup-btn{
+            top:0;
+            left:0;
+            position: absolute;
+            width: 100px;
+            height:100%;
+            background: linear-gradient(to right,#009879,#32CD32);
+            border-radius:30px;
+            transition: .5s;
+        }
+        .signup-input-group{
+            top:180px;
+            position: absolute;
+            width: 280px;
+            transition: .5s;
+        }
+        .signup-input-field{
+            width: 100%;
+            padding: 10px 0;
+            margin: 5px 0;
+            border-left: 0;
+            border-top:0;
+            border-right: 0;
+            border-bottom: 1px solid #999;
+            outline: none; 
+            background: transparent;
+        }
+        .signup-submit-btn{
+            width: 85%;
+            padding: 5px 30px;
+            cursor: pointer;
+            display: block;
+            margin:auto;
+            background: linear-gradient(to right,#009879,#32CD32);
+            border: 0;
+            outline: none;
+            border-radius: 30px;
+        }
+        .signup-avatar{
+            width:110px;
+		    height:110px;
+		    border-radius:50%;
+		    position:absolute;
+		    top:-55px;
+		    left:160px;
+        }
+        .signup-form-header{
+            color:#009879;
+            font-size:40px;
+            font-weight: bold;
+            margin-top:40px;
+        }
+
+        h1{
+            font-family: sans-serif;
+            color:#009FFD;
+        }
+
+        #register1{
+            left: 50px;
+        }
+        .eye{
+            position: absolute;	
+            margin-top: 10px;
+            margin-left:270px;
+            cursor:pointer;
+        }
+        #hide1{
+            display: none;
+        }
+        #hide3{
+            display:none;
+        }
+        h1{
+            font-family: sans-serif;
+            color: #009FFD;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Back Navigation -->
+  	<nav class="navbar navbar-light bg-light sticky-top">
+        <a class="navbar-brand" href="adminsignin.html"><i class="fas fa-backward"></i> Back</a>
+    </nav>
+
+        
+    <div class="signup-menu">
+		<div class="signup-formbox">
+		    <center>
+                <img src="assets/images&gif/others/book.png" class="signup-avatar">
+                <h1 class="signup-form-header">ADD DOCTOR</h1>
+            </center>
+
+            <form action="docregistration.php" method="post" id="register1" class="signup-input-group" autocomplete="off">	
+		        <input type="text" name="doctorid" class="signup-input-field" placeholder="Enter Doctor User Id" required>
+                <input type="text" name="doctorname" class="signup-input-field" placeholder="Enter Doctor's Full Name" required>
+		        <select name="spec" class="signup-input-field" id="spec" onchange="myFunction()">
+                    <option value="" disabled selected>--Select Specialization--</option>
+                    <option value="Dermatology">Dermatology</option>
+                    <option value="Orthopedic">Orthopedic</option>
+                    <option value="Neurology">Neurology</option>
+                    <option value="Physiotheraphy">Physiotheraphy</option>
+                    <option value="Cardiology">Cardiology</option>
+                    <option value="Emergency">Emergency</option>
+               </select><br>
+               <script>
+                function myFunction() {
+                    var x = document.getElementById("spec");
+                    var display=x.options[x.selectedIndex].value;
+                    switch(display)
+                   {
+                        case 'Dermatology':
+                            document.getElementById("fees").value='Rs 1000/-'; 
+                            break ;
+                        case 'Orthopedic':
+                            document.getElementById('fees').value='Rs 1200/-';
+                            break;
+                        case 'Neurology':
+                            document.getElementById('fees').value='Rs 1500/-';
+                            break;
+                        case 'Physiotheraphy':
+                             document.getElementById('fees').value='Rs 2000/-';
+                             break;
+                        case 'Cardiology':
+                             document.getElementById('fees').value='Rs 2000/-';
+                             break;
+                        case 'Emergency':
+                             document.getElementById('fees').value='Rs 500/-';
+                             break;
+                    }
+    
+                    }
+   
+              </script>
+
+                <span class="eye" onclick="myFunction1()">
+                    <i id="hide1"class="fa fa-eye" style="margin-bottom: auto;color:#009879;"></i>
+                    <i id="hide2"class="fa fa-eye-slash" style="margin-bottom: auto;color:#009879;"></i>
+                </span>
+                
+                <input type="password" name="password" class="signup-input-field" id="myinput1" placeholder="Enter Password" ><br>
+                <span class="eye" onclick="myFunction2()">
+                    <i id="hide3"class="fa fa-eye" style="margin-bottom: auto;color:#009879;"></i>
+                    <i id="hide4"class="fa fa-eye-slash" style="margin-bottom: auto;color:#009879;"></i>
+                </span>
+                <input type="password" name="cpassword" class="signup-input-field" id="myinput2" placeholder="Confirm Password" required>
+
+                    <span style="font-family:sans-serif;font-size:15px;font-weight:normal">Fees</span>
+				    <input class="signup-input-field" id="fees" name="fees"  value="" type="text" readonly><br><br>
+                <center>
+                    <button type="submit" style="outline:none" onclick="validate()" class="signup-submit-btn">Add Doctor</button>
+                </center>                
+		    </form>
+		</div>
+	</div>
+
+    <script>
+        function myFunction1(){
+            var x = document.getElementById("myinput1");
+            var y = document.getElementById("hide1");
+            var z = document.getElementById("hide2");
+            if(x.type === 'password'){
+                x.type = "text";
+                y.style.display="block";
+                z.style.display="none";
+            }
+            else{
+                x.type = "password";
+                y.style.display="none";
+                z.style.display="block";
+            }
+        }
+        function myFunction2(){
+            var a1 = document.getElementById("myinput2");
+            var b2 = document.getElementById("hide3");
+            var c3 = document.getElementById("hide4");
+            if(a1.type === 'password'){
+                a1.type = "text";
+                b2.style.display="block";
+                c3.style.display="none";
+            }
+            else{
+                a1.type = "password";
+                b2.style.display="none";
+                c3.style.display="block";
+            }
+        }
+        </script>
+</body>
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>We Care</title>
+
+    <!-- Title icon -->
+    <link rel="icon" href="assets/images&gif/others/logo.jpg">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+    
+    <!--Css Stylesheets-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!--FontAwesome-->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+    
+    <!--Bootstrap-->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <style>
+        body{
+            background-color: #009879;
+            margin:0;
+	        padding:0;
+	        font-family: sans-serif;
+        }
+        .signin-menu{
+            background-color:#009879;
+            height:100%;
+            width:100%;
+        }
+        .signin-formbox{
+            font-family: sans-serif;
+            height: 380px;
+            width: 430px;
+            position: relative;
+            margin: 6% auto;
+            background: #fff;
+            padding: 5px;
+            overflow:hidden;
+            border-radius: 20px;
+            box-shadow: 0 0 20px 9px #ff61241f;
+        }
+        .signin-buttonbox{
+            width: 210px;
+            margin: 10px auto;
+            position:relative;
+            box-shadow: 0 0 20px 9px #ff61241f;
+            border-radius: 30px;
+        }
+        .signin-toggle-btn{
+            padding:10px 30px;
+            cursor: pointer;
+            background: transparent;
+            border:0;
+            outline: none;
+            position: relative;
+            font-size: 13px;
+        }
+        #signin-btn{
+            top:0;
+            left:0;
+            position: absolute;
+            width: 100px;
+            height:100%;
+            background: linear-gradient(to right,#009879,#32CD32);
+            border-radius:30px;
+            transition: .5s;
+        }
+        .signin-input-group{
+            top:200px;
+            position: absolute;
+            width: 280px;
+            transition: .5s;
+        }
+        .signin-input-field{
+            width: 100%;
+            padding: 10px 0;
+            margin: 5px 0;
+            border-left: 0;
+            border-top:0;
+            border-right: 0;
+            border-bottom: 1px solid #999;
+            outline: none; 
+            background: transparent;
+        }
+        .signin-submit-btn{
+            width: 85%;
+            padding: 5px 30px;
+            cursor: pointer;
+            display: block;
+            margin:auto;
+            background: linear-gradient(to right,#009879,#32CD32);
+            border: 0;
+            outline: none;
+            border-radius: 30px;
+        }
+
+
+        h1{
+            font-family: sans-serif;
+            color:#009FFD;
+        }
+
+        #login1{
+            left: 50px;
+        }
+        #login2{
+            left: 450px;
+        }
+        .eye{
+            position: absolute;	
+            margin-top: 10px;
+            margin-left:270px;
+            cursor:pointer;
+        }
+        #hide1{
+            display: none;
+        }
+        #hide3{
+            display:none;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Back Navigation -->
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="home.html"><i class="fas fa-backward"></i> Back</a>
+    </nav>
+
+    <div class="signin-menu">
+		<div class="signin-formbox">
+		    <center>
+                <img src="assets/images&gif/others/login.jpg" class="signin-avatar" style="width:90px;height:90px;">
+                <h1 style="color:#009879;">LOGIN</h1>
+            </center>
+			<div class="signin-buttonbox">
+                <div id="signin-btn"></div>
+                <button style="outline:none" type="button"  class="signin-toggle-btn" onclick="login1()">Patient</button>
+                <button style="outline:none" type="button"  class="signin-toggle-btn" onclick="login2()">Doctor</button>
+		    </div>
+		    <form action="patvalidation.php" method="post" id="login1" class="signin-input-group" autocomplete="off">	
+		        <input type="text" name="user" class="signin-input-field" placeholder="User Id" required>
+			
+                <span class="eye" onclick="myFunction1()">
+                    <i id="hide1"class="fa fa-eye" style="margin-bottom: auto;color:#009879;"></i>
+                    <i id="hide2"class="fa fa-eye-slash" style="margin-bottom: auto;color:#009879;"></i>
+                </span>
+                
+                <input type="password" name="password" class="signin-input-field" id="myinput1" placeholder="Enter Password" ><br><br>
+                <center><button type="submit" style="outline:none" class="signin-submit-btn">Patient login</button></center>
+		    </form>
+		
+            <form action="docvalidation.php" method="post" id="login2" class="signin-input-group" autocomplete="off">
+                <input type="text" name="docid" class="signin-input-field" placeholder="User Id" required>
+                    
+                <span class="eye" onclick="myFunction2()">
+                    <i id="hide3"class="fa fa-eye" style="margin-bottom: auto;color:#009879;"></i>
+                    <i id="hide4"class="fa fa-eye-slash" style=" margin-bottom: auto;color:#009879;"></i>
+                </span>
+
+                <input type="password" name="docpassword" class="signin-input-field" id="myinput2" placeholder="Enter Password" ><br><br>
+                <center><button type="submit" style="outline:none" class="signin-submit-btn">Doctor login</button></center>
+            </form>
+		</div>
+	</div>
+	<script>
+		var x=document.getElementById("login1");
+		var y=document.getElementById("login2");
+		var z=document.getElementById("signin-btn");
+			function login2(){
+				x.style.left="-400px";
+				y.style.left="50px";
+				z.style.left="110px";
+			}
+			function login1(){
+				x.style.left="50px";
+				y.style.left="450px";
+				z.style.left="0px";
+			}
+            function myFunction1(){
+            var a = document.getElementById("myinput1");
+            var b = document.getElementById("hide1");
+            var c = document.getElementById("hide2");
+                if(a.type === 'password'){
+                    a.type = "text";
+                    b.style.display="block";
+                    c.style.display="none";
+                    }
+                else{
+                    a.type = "password";
+                    b.style.display="none";
+                    c.style.display="block";
+                }
+            }
+            function myFunction2(){
+            var a1 = document.getElementById("myinput2");
+            var b2 = document.getElementById("hide3");
+            var c3 = document.getElementById("hide4");
+            if(a1.type === 'password'){
+                a1.type = "text";
+                b2.style.display="block";
+                c3.style.display="none";
+            }
+            else{
+                a1.type = "password";
+                b2.style.display="none";
+                c3.style.display="block";
+            }
+        }
+    </script>
+</body>
+</html>
